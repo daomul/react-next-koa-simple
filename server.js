@@ -25,6 +25,8 @@ app.prepare().then(() => {
     const router = new Router()
 
     // 配置 session 
+    // koa-session 配置加密字符串
+    server.keys = ['some secret hurr']
     const SESSION_CONFIG = {
         key: "tid",
         store: new RedisSessionStore(redis),
@@ -73,8 +75,8 @@ app.prepare().then(() => {
         ctx.respond = false
     })
 
-    server.listen(3001, () => {
-        console.log(" ---- localhost:3001 port starting ----")
+    server.listen(3000, () => {
+        console.log(" ---- localhost:3000 port starting ----")
     })
 
 })

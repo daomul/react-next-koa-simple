@@ -164,6 +164,7 @@ Index.getInitialProps = async ({ ctx, reduxStore }) => {
         userStaredRepos: userStaredRepos.data
       }
     } catch (error) {
+      console.log(error)
       return {}
     }
   }
