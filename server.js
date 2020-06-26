@@ -74,8 +74,8 @@ app.prepare().then(() => {
         ctx.respond = false
     })
 
-    server.listen(3000, () => {
-        console.log(" localhost:3000 port starting ----")
+    server.listen(3001, () => {
+        console.log(" ---- localhost:3001 port starting ----")
     })
 
 })

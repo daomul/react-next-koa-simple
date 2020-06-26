@@ -3,7 +3,7 @@ import { useState, useCallback } from "react"
 import { connect } from "react-redux"
 import Link from "next/link"
 import { withRouter } from "next/router"
-import { GithubOutlined } from '@ant-design/icons';
+import { GithubOutlined, UserOutlined } from '@ant-design/icons';
 
 import { logout } from "../store/store"
 import Container from "./container"
