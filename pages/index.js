@@ -21,7 +21,6 @@ const cache = new Lru({
 })
 
 const Index = ({ userRepos, userStaredRepos, user, router }) => {
-  console.log('----Index入口-----')
 
   // 切换 tab
   const tabKey = router.query.key || "1"
@@ -151,18 +150,21 @@ Index.getInitialProps = async ({ ctx, reduxStore }) => {
   if (user || user.id) {
     // 获取用户自己的仓库
     // req\res 只有在服务端渲染才有
-    const userRepos = await api.request({
-      url: '/user/repos'
-    }, ctx.req, ctx.res)
-
-    // 获取用户关注的仓库
-    const userStaredRepos = await api.request({
-      url: '/user/starred'
-    }, ctx.req, ctx.res)
-
-    return {
-      userRepos: userRepos.data,
-      userStaredRepos: userStaredRepos.data
+    try {
+      const userRepos = await api.request({
+        url: '/user/repos'
+      }, ctx.req, ctx.res)
+  
+      // 获取用户关注的仓库
+      const userStaredRepos = await api.request({
+        url: '/user/starred'
+      }, ctx.req, ctx.res)
+      return {
+        userRepos: userRepos.data,
+        userStaredRepos: userStaredRepos.data
+      }
+    } catch (error) {
+      return {}
     }
   }
   return {}

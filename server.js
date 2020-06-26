@@ -36,17 +36,16 @@ app.prepare().then(() => {
     auth(server)
     api(server)
 
-    router.get("/api/user/info", async ctx => {
-        debugger
-        console.log('ctx.session.userInfo: ')
-        const user = ctx.session.userInfo
-        if (!user) {
-            ctx.status = 401
-        } else {
-            ctx.body = user
-            ctx.set("Content-Type", "application/json")
-        }
-    })
+    // router.get("/api/user/info", async ctx => {
+    //     console.log('ctx.session.userInfo: ')
+    //     const user = ctx.session.userInfo
+    //     if (!user) {
+    //         ctx.status = 401
+    //     } else {
+    //         ctx.body = user
+    //         ctx.set("Content-Type", "application/json")
+    //     }
+    // })
 
     // router.get("/a/:id", async (ctx) => {
     //     var id = ctx.params.id
