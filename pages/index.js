@@ -165,7 +165,10 @@ Index.getInitialProps = async ({ ctx, reduxStore }) => {
       }
     } catch (error) {
       console.log(error)
-      return {}
+      return {
+        userRepos: [],
+        userStaredRepos: []
+      }
     }
   }
   return {}
