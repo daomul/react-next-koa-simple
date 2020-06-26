@@ -20,13 +20,20 @@ function Detail({ readme }) {
 Detail.getInitialProps = async ({ ctx: { query: { owner, name }, req, res } }) => {
 
     // 获取readme，这里使用客户端请求
-    const readmeRes = await api.request({
-        url: `/repos/${owner}/${name}/readme`
-    }, req, res)
-
-    return {
-        readme: readmeRes.data
+    try {
+        const readmeRes = await api.request({
+            url: `/repos/${owner}/${name}/readme`
+        }, req, res)
+    
+        return {
+            readme: readmeRes.data
+        }
+    } catch (error) {
+        return {
+            readme: {}
+        }
     }
+    
 }
 
 export default WithRepoBasic(Detail, "index")

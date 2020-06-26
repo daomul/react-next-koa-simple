@@ -8,7 +8,7 @@ import SearchUser from "../../components/SearchUser"
 
 
 const MDRender = dynamic(
-    () => import("../../components/markDownRender"),
+    () => import("../../components/MarkDownRender"),
     {
         loading: () => <p>Loading......</p>
     }
