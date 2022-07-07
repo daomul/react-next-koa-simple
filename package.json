@@ -28,7 +28,7 @@
     "koa-session": "^6.0.0",
     "lru-cache": "^5.1.1",
     "markdown-it": "^11.0.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
